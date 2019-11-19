@@ -54,6 +54,9 @@ namespace EntVisionLibraries.Sample.App_Start
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
                 kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
+                //Register Library
+                kernel.Bind<EntVisionLibraryBootsraper>().ToSelf();
+
                 RegisterServices(kernel);
 
                 // Install our Ninject-based IDependencyResolver into the Web API config
@@ -78,14 +81,6 @@ namespace EntVisionLibraries.Sample.App_Start
             kernel.Bind<SmartLogisticContext>()
              .ToSelf()
              .InRequestScope();
-
-            kernel.Bind<IConnectionFactory>().To<ConnectionFactory>();
-
-            //EntityFramework
-            kernel.Bind(typeof(EntityFrameworkReadOnlyRepository<,>)).To(typeof(IReadOnlyRepository<>));
-            kernel.Bind(typeof(EntityFrameworkRepository<,>)).To(typeof(IRepository<>));
-            //MicroOrm Dapper
-            kernel.Bind(typeof(MicroOrmDapperRepository<>)).To(typeof(IMicroOrmRepository<>));
 
             kernel.Bind<IMapsRepository>().To<MapsRepository>();
         }        

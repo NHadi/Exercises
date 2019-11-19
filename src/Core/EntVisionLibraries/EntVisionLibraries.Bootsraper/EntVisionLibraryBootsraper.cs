@@ -6,7 +6,7 @@ using Ninject.Modules;
 
 namespace EntVisionLibraries.Bootsraper
 {
-    public class IoC : NinjectModule
+    public class EntVisionLibraryBootsraper : NinjectModule
     {
 
         public override void Load()

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Transactions;
 using System.Web.Http;
 
 namespace EntVisionLibraries.Sample.Controllers
@@ -22,16 +23,21 @@ namespace EntVisionLibraries.Sample.Controllers
             var sample = new Maps
             {
                 Id = Guid.NewGuid(),
-                Title = "Title",
+                Title = "newww",
                 Content = "Content",
                 Latitude = "-33.727111",
                 Longitude = "-33.727111"
             };
 
-            _mapsRepository.Create(sample);
-            _mapsRepository.Save();
+            using (var transaction = new TransactionScope())
+            {
+                _mapsRepository.Create(sample);
+                _mapsRepository.Save();
 
-            var result = _mapsRepository.GetMapByTitle("Title");
+                transaction.Complete();
+            }
+
+            var result = _mapsRepository.GetAll();
             return result.ToList();
         }
 
