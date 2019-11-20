@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntVisionLibraries.Common
+namespace EntVisionLibraries.Common.Domain
 {
     public abstract class Entity<T> : IEntity<T>
     {

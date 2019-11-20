@@ -10,15 +10,13 @@ using System.Threading.Tasks;
 
 namespace Maps.Infrastructure.Data
 {
-    public class MapDbContext : DbContext
+    public interface IMapContext
     {
-        public MapDbContext() : base("MapContext")
-        {
-
-        }
-
-        public DbSet<Warehouse> Warehouse { get; set; }
-        public DbSet<Map> Map { get; set; }
-        public DbSet<Delivery> Delivery { get; set; }
+        DbSet<Warehouse> Warehouse { get; }
+        DbSet<Map> Map { get;  }
+        DbSet<MapDirection> MapDirection { get; }
+        DbSet<MapDirectionStep> MapDirectionStep { get; }
+        DbSet<Delivery> Delivery { get; }
+        int SaveChanges();
     }
 }

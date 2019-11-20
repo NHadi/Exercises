@@ -5,14 +5,14 @@ namespace Maps.Infrastructure.Data.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<Maps.Infrastructure.Data.MapDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<Maps.Infrastructure.Data.MapContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(Maps.Infrastructure.Data.MapDbContext context)
+        protected override void Seed(Maps.Infrastructure.Data.MapContext context)
         {
             //  This method will be called after migrating to the latest version.
 

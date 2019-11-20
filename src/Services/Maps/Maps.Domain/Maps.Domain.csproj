@@ -31,10 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntVisionLibraries.Common">
-      <HintPath>..\EntVisionLibrarySources\EntVisionLibraries.Common.dll</HintPath>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.5.1\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -46,11 +50,30 @@
   <ItemGroup>
     <Compile Include="DeliveryAggregate\Delivery.cs" />
     <Compile Include="DeliveryAggregate\Interface\IDeliveryRepository.cs" />
-    <Compile Include="MapsAggregate\Interface\IMapsRepository.cs" />
-    <Compile Include="MapsAggregate\Maps.cs" />
+    <Compile Include="MapsAggregate\Enums\DirectionType.cs" />
+    <Compile Include="MapsAggregate\Extensions\MapDirectionExtension.cs" />
+    <Compile Include="MapsAggregate\Interface\IMapRepository.cs" />
+    <Compile Include="MapsAggregate\Interface\IMapService.cs" />
+    <Compile Include="MapsAggregate\ValueObjects\DirectionProperties.cs" />
+    <Compile Include="MapsAggregate\MapDirectionStep.cs" />
+    <Compile Include="MapsAggregate\MapDirection.cs" />
+    <Compile Include="MapsAggregate\Map.cs" />
+    <Compile Include="MapsAggregate\Enums\TravelModeType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WarehouseAggregate\Interface\IWarehouseRepository.cs" />
+    <Compile Include="WarehouseAggregate\Interface\IWarehouseService.cs" />
+    <Compile Include="WarehouseAggregate\Validator\WarehouseValidator.cs" />
     <Compile Include="WarehouseAggregate\Warehouse.cs" />
+    <Compile Include="WarehouseAggregate\WarehouseService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\EntVisionLibraries\EntVisionLibraries.Common\EntVisionLibraries.Common.csproj">
+      <Project>{f753e7c8-1248-4700-860b-79c0b614454a}</Project>
+      <Name>EntVisionLibraries.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Warehouses.Infrastructure.Data.Repositories
 {
-    public class WarehouseRepository : EntityFrameworkRepository<Warehouse, MapDbContext>, IWarehouseRepository, IDisposable
+    public class WarehouseRepository : EntityFrameworkRepository<Warehouse, MapContext>, IWarehouseRepository, IDisposable
     {
 
     }

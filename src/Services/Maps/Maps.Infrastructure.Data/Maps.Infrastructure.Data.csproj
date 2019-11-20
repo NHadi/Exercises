@@ -37,12 +37,6 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="EntVisionLibraries.Common">
-      <HintPath>..\EntVisionLibrarySources\EntVisionLibraries.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="EntVisionLibraries.EntityFramework.Common">
-      <HintPath>..\EntVisionLibrarySources\EntVisionLibraries.EntityFramework.Common.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,30 +48,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MapDbContext.cs" />
-    <Compile Include="Migrations\201911190754305_init.cs" />
-    <Compile Include="Migrations\201911190754305_init.Designer.cs">
-      <DependentUpon>201911190754305_init.cs</DependentUpon>
+    <Compile Include="IMapContext.cs" />
+    <Compile Include="MapContext.cs" />
+    <Compile Include="Migrations\201911200746316_Initialize.cs" />
+    <Compile Include="Migrations\201911200746316_Initialize.Designer.cs">
+      <DependentUpon>201911200746316_Initialize.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911201423140_ValueObjectDirection.cs" />
+    <Compile Include="Migrations\201911201423140_ValueObjectDirection.Designer.cs">
+      <DependentUpon>201911201423140_ValueObjectDirection.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DeliveryRepository.cs" />
     <Compile Include="Repositories\MapRepository.cs" />
     <Compile Include="Repositories\WarehouseRepository.cs" />
+    <Compile Include="TestMapContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Core\EntVisionLibraries\EntVisionLibraries.Common\EntVisionLibraries.Common.csproj">
+      <Project>{f753e7c8-1248-4700-860b-79c0b614454a}</Project>
+      <Name>EntVisionLibraries.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Core\EntVisionLibraries\EntVisionLibraries.EntityFramework.Common\EntVisionLibraries.EntityFramework.Common.csproj">
+      <Project>{2f42eac6-d363-4517-abc4-9c00bd58cc51}</Project>
+      <Name>EntVisionLibraries.EntityFramework.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Maps.Domain\Maps.Domain.csproj">
       <Project>{DBBECBD6-F54E-4DA0-9FCB-7F5AD5DB4020}</Project>
       <Name>Maps.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911190754305_init.resx">
-      <DependentUpon>201911190754305_init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911200746316_Initialize.resx">
+      <DependentUpon>201911200746316_Initialize.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911201423140_ValueObjectDirection.resx">
+      <DependentUpon>201911201423140_ValueObjectDirection.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Maps.Infrastructure.Data.Repositories
 {
-    public class DeliveryRepository : EntityFrameworkRepository<Delivery, MapDbContext>, IDeliveryRepository, IDisposable
+    public class DeliveryRepository : EntityFrameworkRepository<Delivery, MapContext>, IDeliveryRepository, IDisposable
     {
     }
 }
