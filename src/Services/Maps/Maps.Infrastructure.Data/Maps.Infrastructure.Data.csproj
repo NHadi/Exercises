@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IMapContext.cs" />
     <Compile Include="MapContext.cs" />
     <Compile Include="Migrations\201911200746316_Initialize.cs" />
     <Compile Include="Migrations\201911200746316_Initialize.Designer.cs">
@@ -63,7 +62,6 @@
     <Compile Include="Repositories\DeliveryRepository.cs" />
     <Compile Include="Repositories\MapRepository.cs" />
     <Compile Include="Repositories\WarehouseRepository.cs" />
-    <Compile Include="TestMapContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -7,8 +7,8 @@ using System.Web.Http;
 
 namespace Maps.WebApplication.Controllers
 {
-    [RoutePrefix("api/Maps")]
-    public class MapsController : ApiController
+    [RoutePrefix("api/Delivery")]
+    public class DeliveryController : ApiController
     {
         // GET api/values
         public IEnumerable<string> Get()
