@@ -6,6 +6,7 @@ using Maps.WebApplication.Mapping;
 using Maps.WebApplication.Models.MapDTOs;
 using Newtonsoft.Json;
 using System;
+using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -21,34 +22,22 @@ namespace Maps.WebApplication.Controllers
         private readonly IMapService _mapService;
         public MapController(IMapService mapService)
         {
-            _mapper = MapMapperConfiguration.Init();
+            _mapper = AutoMapperConfiguration.Init();
             _mapService = mapService;
         }
-        // GET api/values
-        public IHttpActionResult Get()
+        
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAsync()
         {
-            var response = new MapResponse
-            {
-                Title = "Title",
-                Content = "Content",
-                Latitude = "10",
-                Longitude = "20"
-            };
-            
 
-            var result = _mapper.Map<Map>(response);
+            var response = await _mapService.AllMap();
+            var result = _mapper.Map<List<MapResponse>>(response);
 
-            return Ok(new ApiOkResponse(result, 1));
+            return Ok(new ApiOkResponse(result, result.Count));
         }
 
-        // GET api/values/5
-        public string Get(int id)
-        {
-            return "value";
-        }
-
-        // POST api/values
-        public async System.Threading.Tasks.Task<IHttpActionResult> PostAsync([FromBody]Models.MapDTOs.MapRequest request)
+        [HttpPost]
+        public async Task<IHttpActionResult> PostAsync([FromBody] Models.MapDTOs.MapRequest request)
         {
             try
             {
@@ -67,20 +56,10 @@ namespace Maps.WebApplication.Controllers
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                //Log here
+                return BadRequest();
             }
 
-        }
-
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+        }       
     }
 }

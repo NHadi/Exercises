@@ -1,40 +1,91 @@
-﻿using System;
+﻿using AutoMapper;
+using EntVisionLibraries.Common.API;
+using Maps.Domain.WarehouseAggregate.Interface;
+using Maps.WebApplication.Mapping;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
+using Maps.Domain.WarehouseAggregate.Enums;
+using Maps.Domain.WarehouseAggregate;
+using Maps.WebApplication.Models.WarehouseDTOs;
 
 namespace Maps.WebApplication.Controllers
 {
     [RoutePrefix("api/Warehouse")]
     public class WarehouseController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private readonly IMapper _mapper;
+        private readonly IWarehouseService _warehouseService;
+        public WarehouseController(IWarehouseService warehouseService)
         {
-            return new string[] { "value1", "value2" };
+            _mapper = AutoMapperConfiguration.Init();
+            _warehouseService = warehouseService;
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        [HttpGet]
+        public IHttpActionResult Get()
         {
-            return "value";
+
+            var response = _warehouseService
+                .FindWarehouse(FilterCriteriaWarehouseType.Default);
+
+            return Ok(new ApiOkResponse(response, response.Count));
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
+        [HttpGet]
+        [Route("FindByAddress")]
+        public IHttpActionResult FindByAddress(string address)
         {
+
+            var response = _warehouseService
+                .FindWarehouse(FilterCriteriaWarehouseType.Address, new string[] { address });
+
+            var result = _mapper.Map<List<WarehouseResponse>>(response);
+
+            return Ok(new ApiOkResponse(result, result.Count));
         }
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        [HttpGet]
+        [Route("FindByLatLng")]
+        public IHttpActionResult FindByLatLng(string lat, string lng)
         {
+
+            var response = _warehouseService
+                .FindWarehouse(FilterCriteriaWarehouseType.LatLng, new string[] { lat, lng });
+
+            var result = _mapper.Map<List<WarehouseResponse>>(response);
+
+            return Ok(new ApiOkResponse(result, result.Count));
         }
 
-        // DELETE api/values/5
-        public void Delete(int id)
+        [HttpPost]
+        public async Task<IHttpActionResult> PostAsync([FromBody] WarehouseRequest request)
         {
+            try
+            {
+                var data = _mapper.Map<Warehouse>(request);
+
+                var response = await _warehouseService.AddWarehouse(data);
+
+                if (response.IsValid == false)
+                {
+                    return Ok(new ApiBadRequestResponse(400, response.Errors));
+                }
+
+                var result = _mapper.Map<WarehouseResponse>(response.Object);
+
+                return Ok(new ApiOkResponse(result, 1));
+            }
+            catch (Exception ex)
+            {
+                //Log here
+                return BadRequest();
+            }
+
         }
     }
 }

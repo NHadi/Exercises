@@ -1,4 +1,5 @@
 ﻿using EntVisionLibraries.Common.Domain;
+using Maps.Domain.WarehouseAggregate.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +10,7 @@ namespace Maps.Domain.WarehouseAggregate.Interface
 {
     public interface IWarehouseService
     {
-        EntityValidationResult<Warehouse> AddWarehouse(Warehouse warehouse);
+        Task<EntityValidationResult<Warehouse>> AddWarehouse(Warehouse warehouse);
+        List<Warehouse> FindWarehouse(FilterCriteriaWarehouseType filterCriteria, string[] keywords = null);
     }
 }

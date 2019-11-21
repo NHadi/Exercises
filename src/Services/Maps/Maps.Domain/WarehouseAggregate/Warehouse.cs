@@ -27,7 +27,7 @@ namespace Maps.Domain.WarehouseAggregate
         public Map Location { get; set; }
 
         public void SetLocation(string lat, string lng, string title = null , string content = null)
-         => Location = new Map { Id = Guid.NewGuid(), Latitude = lat, Longitude = lng, Title = title, Content = content };
+         => Location = new Map().SetLocation (lat, lng, title, content);
         
 
     }

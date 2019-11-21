@@ -10,5 +10,6 @@ namespace Maps.Domain.MapsAggregate.Interface
     public interface IMapService
     {
         Task<EntityValidationResult<Map>> AddMap(Map map);
+        Task<List<Map>> AllMap();
     }
 }

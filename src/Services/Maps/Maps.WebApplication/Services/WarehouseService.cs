@@ -2,6 +2,9 @@
 using Maps.Domain.MapsAggregate;
 using Maps.Domain.MapsAggregate.Interface;
 using Maps.Domain.MapsAggregate.Interfaces;
+using Maps.Domain.WarehouseAggregate;
+using Maps.Domain.WarehouseAggregate.Enums;
+using Maps.Domain.WarehouseAggregate.Interface;
 using Maps.Domain.WarehouseAggregate.Validator;
 using System;
 using System.Collections.Generic;
@@ -11,31 +14,32 @@ using System.Web;
 
 namespace Maps.WebApplication.Services
 {
-    public class MapService : IMapService
+    public class WarehouseService : IWarehouseService
     {
-        private readonly IMapRepository _mapRepository;
-        private readonly MapValidator _validator = new MapValidator();
-        public MapService(IMapRepository mapRepository)
+        private readonly IWarehouseRepository _warehouseRepository;
+        private readonly WarehouseValidator _validator = new WarehouseValidator();
+        public WarehouseService(IWarehouseRepository warehouseRepository)
         {
-            _mapRepository = mapRepository;
+            _warehouseRepository = warehouseRepository;
         }
 
-        public async Task<EntityValidationResult<Map>> AddMap(Map map)
+
+        public async Task<EntityValidationResult<Warehouse>> AddWarehouse(Warehouse data)
         {
             try
             {
-                var result = new EntityValidationResult<Map>();
-                var validationResult = _validator.Validate(map);
+                var result = new EntityValidationResult<Warehouse>();
+                var validationResult = _validator.Validate(data);
 
                 result.IsValid = validationResult.IsValid;
-                result.Object = map;
+                result.Object = data;
 
                 if (validationResult.IsValid)
                 {
-                    map.Id = Guid.NewGuid();
+                    data.Id = Guid.NewGuid();
 
-                    _mapRepository.Create(map);
-                    await _mapRepository.SaveAsync();
+                    _warehouseRepository.Create(data);
+                    await _warehouseRepository.SaveAsync();
                 }
                 else
                 {
@@ -51,16 +55,18 @@ namespace Maps.WebApplication.Services
             }
         }
 
-        public async Task<List<Map>> AllMap()
+
+        public List<Warehouse> FindWarehouse(FilterCriteriaWarehouseType filterCriteria, string[] keywords = null)
         {
             try
             {
-                var data = await _mapRepository.GetAllAsync();
+                var data = _warehouseRepository.FilterWarehouseByCriteria(filterCriteria, keywords);
+
                 return data.ToList();
             }
             catch (Exception ex)
             {
-
+                //log here
                 throw ex;
             }
         }
