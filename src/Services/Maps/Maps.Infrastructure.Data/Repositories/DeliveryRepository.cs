@@ -11,5 +11,6 @@ namespace Maps.Infrastructure.Data.Repositories
 {
     public class DeliveryRepository : EntityFrameworkRepository<Delivery, MapContext>, IDeliveryRepository, IDisposable
     {
+       
     }
 }

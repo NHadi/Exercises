@@ -55,6 +55,7 @@
     <Compile Include="Domain\EntityValidationFailure.cs" />
     <Compile Include="Domain\EntityValidationResult.cs" />
     <Compile Include="Domain\ValueObject.cs" />
+    <Compile Include="Interface\IAggregateRoot.cs" />
     <Compile Include="Interface\IEntity.cs" />
     <Compile Include="Interface\IMicroOrmRepository.cs" />
     <Compile Include="Interface\IReadOnlyRepository.cs" />

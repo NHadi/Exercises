@@ -1,8 +1,13 @@
-﻿using System;
+﻿using AutoMapper;
+using EntVisionLibraries.Common.API;
+using Maps.Domain.DeliveryAggregate.Interface;
+using Maps.WebApplication.Mapping;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace Maps.WebApplication.Controllers
@@ -10,31 +15,49 @@ namespace Maps.WebApplication.Controllers
     [RoutePrefix("api/Delivery")]
     public class DeliveryController : ApiController
     {
-        // GET api/values
-        public IEnumerable<string> Get()
+        private readonly IMapper _mapper;
+        private readonly IDeliveryService _deliveryService;
+        public DeliveryController(IDeliveryService deliveryService)
         {
-            return new string[] { "value1", "value2" };
+            _mapper = AutoMapperConfiguration.Init();
+            _deliveryService = deliveryService;
         }
 
-        // GET api/values/5
-        public string Get(int id)
+        [HttpGet]
+        [Route("TrackJob")]
+        public async Task<IHttpActionResult> TrackJob(string code)
         {
-            return "value";
+
+            var response = await _deliveryService.TrackJob(code);
+            //var result = _mapper.Map<List<MapResponse>>(response);
+
+            return Ok(new ApiOkResponse(response, response != null ? 1 : 0));
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+        //[HttpPost]
+        //public async Task<IHttpActionResult> PostAsync([FromBody] Models.MapDTOs.MapRequest request)
+        //{
+        //    try
+        //    {
+        //        var data = _mapper.Map<Map>(request);
 
-        // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
-        {
-        }
+        //        var response = await _mapService.AddMap(data);
 
-        // DELETE api/values/5
-        public void Delete(int id)
-        {
-        }
+        //        if (response.IsValid == false)
+        //        {
+        //            return Ok(new ApiBadRequestResponse(400, response.Errors));
+        //        }
+
+        //        var result = _mapper.Map<MapResponse>(response.Object);
+
+        //        return Ok(new ApiOkResponse(result, 1));
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        //Log here
+        //        return BadRequest();
+        //    }
+
+        //}
     }
 }

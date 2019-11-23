@@ -92,6 +92,7 @@ namespace Maps.WebApplication.App_Start
 
             kernel.Bind<IMapService>().To<MapService>();
             kernel.Bind<IWarehouseService>().To<WarehouseService>();
+            kernel.Bind<IDeliveryService>().To<DeliveryService>();
         }
     }
 }

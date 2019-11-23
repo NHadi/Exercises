@@ -31,7 +31,7 @@ namespace Maps.WebApplication.Controllers
         {
 
             var response = _warehouseService
-                .FindWarehouse(FilterCriteriaWarehouseType.Default);
+                .FindWarehouse(FilterCriteriaWarehouseType.Default);                       
 
             return Ok(new ApiOkResponse(response, response.Count));
         }
@@ -72,9 +72,7 @@ namespace Maps.WebApplication.Controllers
                 var response = await _warehouseService.AddWarehouse(data);
 
                 if (response.IsValid == false)
-                {
                     return Ok(new ApiBadRequestResponse(400, response.Errors));
-                }
 
                 var result = _mapper.Map<WarehouseResponse>(response.Object);
 

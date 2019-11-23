@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace EntVisionLibraries.Common.Interface
 {
-    public interface IReadOnlyRepository<TEntity> : IDisposable
+    public interface IReadOnlyRepository<TEntity> : IAggregateRoot, IDisposable
         where TEntity : class, IEntity
     {
         IEnumerable<TEntity> GetAll(

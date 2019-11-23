@@ -26,7 +26,7 @@ namespace Maps.Domain.DeliveryAggregate
             Direction = direction;
             Status = status;
         }
-
+        public string Code { get; set; }
         public string Name { get; set; }
         public Warehouse Warehouse { get; set; }
         public Map Destination { get; set; }

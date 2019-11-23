@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201911201423140_ValueObjectDirection.Designer.cs">
       <DependentUpon>201911201423140_ValueObjectDirection.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911210845073_add_column_code_in_table_delivery.cs" />
+    <Compile Include="Migrations\201911210845073_add_column_code_in_table_delivery.Designer.cs">
+      <DependentUpon>201911210845073_add_column_code_in_table_delivery.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DeliveryRepository.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911201423140_ValueObjectDirection.resx">
       <DependentUpon>201911201423140_ValueObjectDirection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911210845073_add_column_code_in_table_delivery.resx">
+      <DependentUpon>201911210845073_add_column_code_in_table_delivery.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

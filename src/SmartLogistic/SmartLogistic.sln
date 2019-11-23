@@ -1,0 +1,83 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29424.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.Domain", "SmartLogistic.Domain\SmartLogistic.Domain.csproj", "{5F1325EE-74DF-408D-8860-6F9780CE5F45}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{F53C8239-5E03-43A4-8780-364AF7EB3956}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "core", "core", "{0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntVisionLibraries.Common", "..\Core\EntVisionLibraries\EntVisionLibraries.Common\EntVisionLibraries.Common.csproj", "{F753E7C8-1248-4700-860B-79C0B614454A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntVisionLibraries.Bootsraper", "..\Core\EntVisionLibraries\EntVisionLibraries.Bootsraper\EntVisionLibraries.Bootsraper.csproj", "{6D78A375-0200-4FE0-AF8E-E82A2CFCC536}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntVisionLibraries.EntityFramework.Common", "..\Core\EntVisionLibraries\EntVisionLibraries.EntityFramework.Common\EntVisionLibraries.EntityFramework.Common.csproj", "{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntVisionLibraries.MicroOrmDapper.Common", "..\Core\EntVisionLibraries\EntVisionLibraries.MicroOrmDapper.Common\EntVisionLibraries.MicroOrmDapper.Common.csproj", "{407FFD51-055D-4F27-AEC3-28B857247029}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.Infrastructure.Data", "SmartLogistic.Infrastructure.Data\SmartLogistic.Infrastructure.Data.csproj", "{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.WebServices.Api", "SmartLogistic.WebServices.Api\SmartLogistic.WebServices.Api.csproj", "{67816A06-C31D-4F1A-92EF-3AA4D629D033}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.WebServices.Api.Tests", "src\SmartLogistic.WebServices.Api.Tests\SmartLogistic.WebServices.Api.Tests.csproj", "{9BCA13A7-71D7-41CB-9648-C4C704689D8E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1C8B3410-C7DF-42E3-8A81-2DAB186ED7CF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5F1325EE-74DF-408D-8860-6F9780CE5F45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F1325EE-74DF-408D-8860-6F9780CE5F45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F1325EE-74DF-408D-8860-6F9780CE5F45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F1325EE-74DF-408D-8860-6F9780CE5F45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F753E7C8-1248-4700-860B-79C0B614454A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F753E7C8-1248-4700-860B-79C0B614454A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F753E7C8-1248-4700-860B-79C0B614454A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F753E7C8-1248-4700-860B-79C0B614454A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D78A375-0200-4FE0-AF8E-E82A2CFCC536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D78A375-0200-4FE0-AF8E-E82A2CFCC536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D78A375-0200-4FE0-AF8E-E82A2CFCC536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D78A375-0200-4FE0-AF8E-E82A2CFCC536}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{407FFD51-055D-4F27-AEC3-28B857247029}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{407FFD51-055D-4F27-AEC3-28B857247029}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{407FFD51-055D-4F27-AEC3-28B857247029}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{407FFD51-055D-4F27-AEC3-28B857247029}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5F1325EE-74DF-408D-8860-6F9780CE5F45} = {F53C8239-5E03-43A4-8780-364AF7EB3956}
+		{F753E7C8-1248-4700-860B-79C0B614454A} = {0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}
+		{6D78A375-0200-4FE0-AF8E-E82A2CFCC536} = {0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}
+		{2F42EAC6-D363-4517-ABC4-9C00BD58CC51} = {0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}
+		{407FFD51-055D-4F27-AEC3-28B857247029} = {0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}
+		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80} = {F53C8239-5E03-43A4-8780-364AF7EB3956}
+		{67816A06-C31D-4F1A-92EF-3AA4D629D033} = {F53C8239-5E03-43A4-8780-364AF7EB3956}
+		{9BCA13A7-71D7-41CB-9648-C4C704689D8E} = {1C8B3410-C7DF-42E3-8A81-2DAB186ED7CF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3E465BC8-CC14-4D26-8DE1-E2563D366FB6}
+	EndGlobalSection
+EndGlobal

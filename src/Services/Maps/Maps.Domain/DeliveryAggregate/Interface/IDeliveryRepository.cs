@@ -8,6 +8,6 @@ using System.Threading.Tasks;
 namespace Maps.Domain.DeliveryAggregate.Interface
 {
     public interface IDeliveryRepository : IRepository<Delivery>
-    {
+    {        
     }
 }

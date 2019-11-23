@@ -1,7 +1,4 @@
 ﻿using EntVisionLibraries.Common.Domain;
-using Maps.Domain.MapsAggregate;
-using Maps.Domain.MapsAggregate.Interface;
-using Maps.Domain.MapsAggregate.Interfaces;
 using Maps.Domain.WarehouseAggregate;
 using Maps.Domain.WarehouseAggregate.Enums;
 using Maps.Domain.WarehouseAggregate.Interface;
@@ -10,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace Maps.WebApplication.Services
 {

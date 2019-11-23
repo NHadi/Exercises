@@ -10,8 +10,9 @@ namespace Maps.Domain.WarehouseAggregate.Validator
     public class WarehouseValidator : AbstractValidator<Warehouse>
     {
         public WarehouseValidator()
-        {
+        {            
             RuleFor(x => x.Location).NotNull();
+            RuleFor(x => x.Location).SetValidator(new MapValidator());            
             RuleFor(x => x.Address).NotNull();
         }
     }

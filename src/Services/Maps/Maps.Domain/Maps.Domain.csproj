@@ -50,6 +50,8 @@
   <ItemGroup>
     <Compile Include="DeliveryAggregate\Delivery.cs" />
     <Compile Include="DeliveryAggregate\Interface\IDeliveryRepository.cs" />
+    <Compile Include="DeliveryAggregate\Interface\IDeliveryService.cs" />
+    <Compile Include="DeliveryAggregate\Validator\DeliveryValidator.cs" />
     <Compile Include="MapsAggregate\Enums\DirectionType.cs" />
     <Compile Include="MapsAggregate\Extensions\FilterMapDirectionExtension.cs" />
     <Compile Include="MapsAggregate\Interface\IMapRepository.cs" />
