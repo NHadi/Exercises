@@ -11,7 +11,7 @@ namespace SmartLogistic.Infrastructure.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SmartLogistic.Infrastructure.Data.SmartLogisticContext context)

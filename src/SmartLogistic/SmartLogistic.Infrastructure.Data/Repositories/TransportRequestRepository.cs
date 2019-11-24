@@ -14,11 +14,10 @@ namespace SmartLogistic.Infrastructure.Data.Repositories
 {
     public class TransportRequestRepository : EntityFrameworkRepository<TransportRequest, SmartLogisticContext>, ITransportRequestRepository
     {
-        public async Task<IEnumerable<TransportRequest>> FindTransportRequestAsync(FilterTransportType filterCriteria, string keywords = null)
-        => await Get(includeProperties: "PreferredDeliveryTime,Vehicle,RouteDetail,Status")
-                    .FilterByCriteria(filterCriteria, keywords)
-                    .AsQueryable()
-                .ToListAsync();
+        public IEnumerable<TransportRequest> FindTransportRequest(FilterTransportType filterCriteria, string keywords = null)
+        =>  Get(includeProperties: "RouteDetail")
+                    .FilterByCriteria(filterCriteria, keywords)                    
+                .ToList();
 
         public async Task<DeliveryTime> GetDeliveryTime(DeliveryTimeType deliveryTimeType)
         {

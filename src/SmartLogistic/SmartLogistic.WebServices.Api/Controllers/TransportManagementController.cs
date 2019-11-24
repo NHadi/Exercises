@@ -25,11 +25,11 @@ namespace SmartLogistic.WebServices.Api.Controllers
 
         [HttpGet]
         [Route("TrackJob")]
-        public async Task<IHttpActionResult> TrackJob(string code)
+        public IHttpActionResult TrackJob(string code)
         {
             try
             {
-                var response = await _transportManagementService.FindTransportRequestAsync(FilterTransportType.Code, "T01");
+                var response = _transportManagementService.FindTransportRequest(FilterTransportType.Code, code).FirstOrDefault();
 
                 return Ok(new ApiOkResponse(response, response != null ? 1 : 0));
             }
@@ -38,7 +38,7 @@ namespace SmartLogistic.WebServices.Api.Controllers
                 //Log here
                 return BadRequest();
             }
-            
+
         }
 
         [HttpPost]

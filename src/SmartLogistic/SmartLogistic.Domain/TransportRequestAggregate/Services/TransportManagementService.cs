@@ -1,5 +1,4 @@
 ﻿using EntVisionLibraries.Common.Domain;
-using SmartLogistic.Domain.TransportRequestAggregate;
 using SmartLogistic.Domain.TransportRequestAggregate.Enums;
 using SmartLogistic.Domain.TransportRequestAggregate.Intefaces;
 using SmartLogistic.Domain.TransportRequestAggregate.Validators;
@@ -7,9 +6,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 
-namespace SmartLogistic.WebServices.Api.Services
+namespace SmartLogistic.Domain.TransportRequestAggregate.Services
 {
     public class TransportManagementService : ITransportManagementService
     {
@@ -52,20 +50,20 @@ namespace SmartLogistic.WebServices.Api.Services
             }
         }
 
-        public async Task<List<TransportRequest>> FindTransportRequestAsync(FilterTransportType filterCriteria, string keywords = null)
+        public List<TransportRequest> FindTransportRequest(FilterTransportType filterCriteria, string keywords = null)
         {
             try
             {
-                var data = await _transportRequestRepository.FindTransportRequestAsync(filterCriteria, keywords);
+                var data = _transportRequestRepository.FindTransportRequest(filterCriteria, keywords);
                 return data.ToList();
             }
             catch (Exception ex)
             {
 
                 throw ex;
-            }            
+            }
         }
 
-        
+
     }
 }

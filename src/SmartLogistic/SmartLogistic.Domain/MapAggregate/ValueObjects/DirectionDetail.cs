@@ -5,10 +5,10 @@ namespace SmartLogistic.Domain.MapAggregate.ValueObjects
 {
     public class Direction: ValueObject
     {
-        public double Distance { get; private set; }
-        public string DistanceText { get; private set; }
-        public double Duration { get; private set; }
-        public string DurationText { get; private set; }
+        public double Distance { get;  set; }
+        public string DistanceText { get;  set; }
+        public double Duration { get;  set; }
+        public string DurationText { get;  set; }
 
         public Direction(double distance, string distanceText, double duration, string durationText)
         {
@@ -16,6 +16,11 @@ namespace SmartLogistic.Domain.MapAggregate.ValueObjects
             DistanceText = distanceText;
             Duration = duration;
             DurationText = durationText;
+        }
+
+        public Direction()
+        {
+
         }
 
 

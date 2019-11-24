@@ -34,6 +34,9 @@
     <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.8.5.1\lib\net45\FluentValidation.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
@@ -55,6 +58,7 @@
     <Compile Include="MapAggregate\Map.cs" />
     <Compile Include="MapAggregate\MapDirection.cs" />
     <Compile Include="MapAggregate\MapDirectionStep.cs" />
+    <Compile Include="MapAggregate\Services\MapManagementService.cs" />
     <Compile Include="MapAggregate\ValueObjects\DirectionDetail.cs" />
     <Compile Include="TransportRequestAggregate\DeliveryTime.cs" />
     <Compile Include="TransportRequestAggregate\Enums\DeliveryTimeType.cs" />
@@ -63,6 +67,7 @@
     <Compile Include="TransportRequestAggregate\Intefaces\ITransportManagementService.cs" />
     <Compile Include="TransportRequestAggregate\Intefaces\ITransportRequestRepository.cs" />
     <Compile Include="TransportRequestAggregate\JobStatus.cs" />
+    <Compile Include="TransportRequestAggregate\Services\TransportManagementService.cs" />
     <Compile Include="TransportRequestAggregate\StaticTransportRequest.cs" />
     <Compile Include="TransportRequestAggregate\TransportRequest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -80,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MapAggregate\Validators\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

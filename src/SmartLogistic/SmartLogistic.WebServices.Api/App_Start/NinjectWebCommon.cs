@@ -10,13 +10,12 @@ namespace SmartLogistic.WebServices.Api.App_Start
     using Ninject.Web.Common;
     using Ninject.Web.Common.WebHost;
     using SmartLogistic.Domain.MapAggregate.Interfaces;
+    using SmartLogistic.Domain.MapAggregate.Services;
     using SmartLogistic.Domain.TransportRequestAggregate.Intefaces;
+    using SmartLogistic.Domain.TransportRequestAggregate.Services;
     using SmartLogistic.Infrastructure.Data;
     using SmartLogistic.Infrastructure.Data.Repositories;
-    using SmartLogistic.WebServices.Api.Services;
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Web;
     using System.Web.Http;
 
@@ -88,7 +87,10 @@ namespace SmartLogistic.WebServices.Api.App_Start
 
             kernel.Bind<IMapRepository>().To<MapRepository>();
             kernel.Bind<ITransportRequestRepository>().To<TransportRequestRepository>();
+
             kernel.Bind<ITransportManagementService>().To<TransportManagementService>();
+            kernel.Bind<IMapManagementService>().To<MapManagementService>();
+            
         }
     }
 }

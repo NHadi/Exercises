@@ -11,6 +11,6 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.Intefaces
     public interface ITransportManagementService
     {        
         Task<EntityValidationResult<TransportRequest>> AddTransportRequest(TransportRequest data);
-        Task<List<TransportRequest>> FindTransportRequestAsync(FilterTransportType filterCriteria, string keywords = null);
+        List<TransportRequest> FindTransportRequest(FilterTransportType filterCriteria, string keywords = null);
     }
 }

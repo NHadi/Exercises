@@ -21,9 +21,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.Infrastructur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.WebServices.Api", "SmartLogistic.WebServices.Api\SmartLogistic.WebServices.Api.csproj", "{67816A06-C31D-4F1A-92EF-3AA4D629D033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.WebServices.Api.Tests", "src\SmartLogistic.WebServices.Api.Tests\SmartLogistic.WebServices.Api.Tests.csproj", "{9BCA13A7-71D7-41CB-9648-C4C704689D8E}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{1C8B3410-C7DF-42E3-8A81-2DAB186ED7CF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "services", "services", "{D206C078-AD05-44FB-A369-38DC2826E12B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartLogistic.WindowService", "SmartLogistic.WindowService\SmartLogistic.WindowService.csproj", "{14C6818C-188D-44C3-82BF-4225E633D3A9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -59,10 +61,10 @@ Global
 		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{67816A06-C31D-4F1A-92EF-3AA4D629D033}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9BCA13A7-71D7-41CB-9648-C4C704689D8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14C6818C-188D-44C3-82BF-4225E633D3A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14C6818C-188D-44C3-82BF-4225E633D3A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14C6818C-188D-44C3-82BF-4225E633D3A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14C6818C-188D-44C3-82BF-4225E633D3A9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,7 +77,7 @@ Global
 		{407FFD51-055D-4F27-AEC3-28B857247029} = {0E43FAAA-58AC-4CA2-BC98-2636CAE277CF}
 		{68F38E1D-967F-47DF-B52F-30EA1A6ACA80} = {F53C8239-5E03-43A4-8780-364AF7EB3956}
 		{67816A06-C31D-4F1A-92EF-3AA4D629D033} = {F53C8239-5E03-43A4-8780-364AF7EB3956}
-		{9BCA13A7-71D7-41CB-9648-C4C704689D8E} = {1C8B3410-C7DF-42E3-8A81-2DAB186ED7CF}
+		{14C6818C-188D-44C3-82BF-4225E633D3A9} = {D206C078-AD05-44FB-A369-38DC2826E12B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3E465BC8-CC14-4D26-8DE1-E2563D366FB6}

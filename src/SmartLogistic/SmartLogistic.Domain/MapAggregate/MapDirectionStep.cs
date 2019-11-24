@@ -17,7 +17,7 @@ namespace SmartLogistic.Domain.MapAggregate
             TravelMode = travelMode;
         }
 
-        public Direction Direction { get; private set; }
+        public Direction Direction { get; set; }
         public string Instructions { get; set; }
         public string TravelMode { get; set; }
     }

@@ -1,5 +1,6 @@
 ﻿using EntVisionLibraries.Common.Domain;
 using EntVisionLibraries.Common.Interface;
+using Newtonsoft.Json;
 using SmartLogistic.Domain.MapAggregate;
 using SmartLogistic.Domain.MapAggregate.ValueObjects;
 using SmartLogistic.Domain.TransportRequestAggregate.ValueObjects;
@@ -24,27 +25,25 @@ namespace SmartLogistic.Domain.TransportRequestAggregate
             Delivery = delivery;            
         }
 
-        public string Code { get; set; }
-        // Using a private field, better for DDD Aggregate's encapsulation
-        // so Pickup, Delivery, DeliveryTime cannot be modified from "outside the AggregateRoot" directly to the constructor
-        public AddressDetail Pickup { get; private set; }
-        public AddressDetail Delivery { get; private set; }
+        public string Code { get; set; }        
+        public AddressDetail Pickup { get; set; }        
+        public AddressDetail Delivery { get; set; }
         public DateTime DeliveryDate { get; set; }
         public string PreferredDeliveryTime { get; set; }
         public string PackingDetails { get; set; }
-        public Vehicle Vehicle { get; private set; }
-        public string ScheduledDeliveryTime { get; private set; }
-        public MapDirection RouteDetail { get; private set; }
-        public JobStatus Status { get; private set; }
+        public string Vehicle { get; set; }
+        public string ScheduledDeliveryTime { get; set; }
+        public MapDirection RouteDetail { get; set; }
+        public string Status { get; set; }
 
-        public void AssignedVehicle(Vehicle vehicle)
+        public void AssignedVehicle(string vehicle)
          => Vehicle = vehicle;
-        public void AssignedVehicle(string name, VehicleArea vehicleArea, string description)
-         => Vehicle = new Vehicle(name, vehicleArea, description);
-        public void AssignedStatus(JobStatus status)
-         => Status = status;
+        //public void AssignedVehicle(string name, VehicleArea vehicleArea, string description)
+        // => Vehicle = new Vehicle(name, vehicleArea, description);
+        //public void AssignedStatus(JobStatus status)
+        // => Status = status;
         public void AssignedStatus(string status)
-         => Status = new JobStatus(status);
+         => Status = status;
         public void ScheduledDilvery(string time)
             => ScheduledDeliveryTime = time;
         public void AssignedRoute(Map start, Map end, Direction direction, List<MapDirectionStep> steps)

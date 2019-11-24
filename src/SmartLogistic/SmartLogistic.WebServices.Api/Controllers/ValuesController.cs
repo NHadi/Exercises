@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EntVisionLibraries.Common.API;
+using SmartLogistic.Domain.MapAggregate.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -9,12 +11,36 @@ namespace SmartLogistic.WebServices.Api.Controllers
 {
     public class ValuesController : ApiController
     {
-        // GET api/values
+
+        private readonly IMapManagementService _mapManagementService;
+        public ValuesController(IMapManagementService mapManagementService)
+        {
+            _mapManagementService = mapManagementService;
+        }
+
+        [HttpGet]
+        [Route("Geocoding")]
+        public IHttpActionResult Geocoding(string address)
+        {
+            try
+            {
+                var response = _mapManagementService.GetGeocoding(address);
+
+                return Ok(new ApiOkResponse(response, response != null ? 1 : 0));
+            }
+            catch (Exception ex)
+            {
+                //Log here
+                return BadRequest();
+            }
+
+        }
+
+
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
-
         // GET api/values/5
         public string Get(int id)
         {

@@ -11,7 +11,7 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.Intefaces
     public interface ITransportRequestRepository : IRepository<TransportRequest>, IAggregateRoot
     {
         Task<DeliveryTime> GetDeliveryTime(DeliveryTimeType deliveryTimeType);
-        Task<IEnumerable<TransportRequest>> FindTransportRequestAsync(FilterTransportType filterCriteria, string keywords = null);
+        IEnumerable<TransportRequest> FindTransportRequest(FilterTransportType filterCriteria, string keywords = null);
 
     }
 }

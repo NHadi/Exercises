@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SmartLogistic.Infrastructure.Data</RootNamespace>
-    <AssemblyName>SmartLogistic.Infrastructure.Data</AssemblyName>
+    <ProjectGuid>{14C6818C-188D-44C3-82BF-4225E633D3A9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SmartLogistic.WindowService</RootNamespace>
+    <AssemblyName>SmartLogistic.WindowService</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -39,31 +41,31 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201911231454035_Initialize.cs" />
-    <Compile Include="Migrations\201911231454035_Initialize.Designer.cs">
-      <DependentUpon>201911231454035_Initialize.cs</DependentUpon>
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\201911231641271_change_delivery_time_to_field_non_relationship.cs" />
-    <Compile Include="Migrations\201911231641271_change_delivery_time_to_field_non_relationship.Designer.cs">
-      <DependentUpon>201911231641271_change_delivery_time_to_field_non_relationship.cs</DependentUpon>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201911240743248_change_vehicle_to_field_non_relationship.cs" />
-    <Compile Include="Migrations\201911240743248_change_vehicle_to_field_non_relationship.Designer.cs">
-      <DependentUpon>201911240743248_change_vehicle_to_field_non_relationship.cs</DependentUpon>
+    <Compile Include="Service1.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Repositories\MapRepository.cs" />
-    <Compile Include="Repositories\TransportRequestRepository.cs" />
-    <Compile Include="SmartLogisticContext.cs" />
+    <Compile Include="Service1.Designer.cs">
+      <DependentUpon>Service1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,29 +73,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\EntVisionLibraries\EntVisionLibraries.Common\EntVisionLibraries.Common.csproj">
-      <Project>{F753E7C8-1248-4700-860B-79C0B614454A}</Project>
-      <Name>EntVisionLibraries.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Core\EntVisionLibraries\EntVisionLibraries.EntityFramework.Common\EntVisionLibraries.EntityFramework.Common.csproj">
-      <Project>{2F42EAC6-D363-4517-ABC4-9C00BD58CC51}</Project>
-      <Name>EntVisionLibraries.EntityFramework.Common</Name>
-    </ProjectReference>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\SmartLogistic.Domain\SmartLogistic.Domain.csproj">
       <Project>{5F1325EE-74DF-408D-8860-6F9780CE5F45}</Project>
       <Name>SmartLogistic.Domain</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911231454035_Initialize.resx">
-      <DependentUpon>201911231454035_Initialize.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911231641271_change_delivery_time_to_field_non_relationship.resx">
-      <DependentUpon>201911231641271_change_delivery_time_to_field_non_relationship.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201911240743248_change_vehicle_to_field_non_relationship.resx">
-      <DependentUpon>201911240743248_change_vehicle_to_field_non_relationship.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\SmartLogistic.Infrastructure.Data\SmartLogistic.Infrastructure.Data.csproj">
+      <Project>{68F38E1D-967F-47DF-B52F-30EA1A6ACA80}</Project>
+      <Name>SmartLogistic.Infrastructure.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

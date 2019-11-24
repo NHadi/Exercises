@@ -5,6 +5,10 @@ namespace SmartLogistic.Domain.TransportRequestAggregate
 {
     public class JobStatus : Entity<Guid>
     {
+        public JobStatus()
+        {
+
+        }
         public JobStatus(string name)
         {
             Name = name;

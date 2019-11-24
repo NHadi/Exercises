@@ -1,5 +1,6 @@
 ﻿using EntVisionLibraries.Common.Data;
 using EntVisionLibraries.Common.Interface;
+using EntVisionLibraries.Common.Utilities.Interfaces;
 using EntVisionLibraries.EntityFramework.Common;
 using EntVisionLibraries.MicroOrmDapper.Common;
 using Ninject.Modules;
@@ -17,7 +18,7 @@ namespace EntVisionLibraries.Bootsraper
             Bind(typeof(EntityFrameworkReadOnlyRepository<,>)).To(typeof(IReadOnlyRepository<>)).InSingletonScope();
             Bind(typeof(EntityFrameworkRepository<,>)).To(typeof(IRepository<>)).InSingletonScope();
             //MicroOrm Dapper
-            Bind(typeof(MicroOrmDapperRepository<>)).To(typeof(IMicroOrmRepository<>)).InSingletonScope();
+            Bind(typeof(MicroOrmDapperRepository<>)).To(typeof(IMicroOrmRepository<>)).InSingletonScope();            
         }
     }
 }

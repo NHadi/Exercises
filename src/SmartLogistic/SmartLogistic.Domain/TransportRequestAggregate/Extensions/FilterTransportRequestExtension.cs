@@ -40,10 +40,10 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.Extensions
         => data.Where(x => x.Code == keyword);
 
         public static IEnumerable<TransportRequest> FilterByStatus(this IEnumerable<TransportRequest> data, string keyword)
-        => data.Where(x => x.Status.Name == keyword);
+        => data.Where(x => x.Status == keyword);
 
         public static IEnumerable<TransportRequest> FilterByVehicle(this IEnumerable<TransportRequest> data, string keyword)
-        => data.Where(x => x.Vehicle.Name == keyword);
+        => data.Where(x => x.Vehicle == keyword);
 
         public static IEnumerable<TransportRequest> FilterByDeliveryTime(this IEnumerable<TransportRequest> data, string keyword)
         => data.Where(x => x.PreferredDeliveryTime == keyword);

@@ -9,9 +9,9 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.ValueObjects
 {
     public class AddressDetail : ValueObject
     {
-        public string Address { get; private set; }
-        public int Latitude { get; private set; }
-        public int Longitude { get; private set; }
+        public string Address { get; set; }
+        public int Latitude { get; set; }
+        public int Longitude { get; set; }
 
         public AddressDetail(string address, int lat, int lng)
         {
@@ -23,6 +23,11 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.ValueObjects
         public AddressDetail(string address)
         {
             Address = address;
+        }
+
+        public AddressDetail()
+        {
+
         }
 
         protected override IEnumerable<object> GetEqualityComponents()
