@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201911240743248_change_vehicle_to_field_non_relationship.Designer.cs">
       <DependentUpon>201911240743248_change_vehicle_to_field_non_relationship.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911240854086_rename_table_map_to_mapLocation.cs" />
+    <Compile Include="Migrations\201911240854086_rename_table_map_to_mapLocation.Designer.cs">
+      <DependentUpon>201911240854086_rename_table_map_to_mapLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911241403484_change_type_data_int_in_lat_and_lng_to_double.cs" />
+    <Compile Include="Migrations\201911241403484_change_type_data_int_in_lat_and_lng_to_double.Designer.cs">
+      <DependentUpon>201911241403484_change_type_data_int_in_lat_and_lng_to_double.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repositories\MapRepository.cs" />
     <Compile Include="Repositories\TransportRequestRepository.cs" />
@@ -93,6 +101,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911240743248_change_vehicle_to_field_non_relationship.resx">
       <DependentUpon>201911240743248_change_vehicle_to_field_non_relationship.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911240854086_rename_table_map_to_mapLocation.resx">
+      <DependentUpon>201911240854086_rename_table_map_to_mapLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911241403484_change_type_data_int_in_lat_and_lng_to_double.resx">
+      <DependentUpon>201911241403484_change_type_data_int_in_lat_and_lng_to_double.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

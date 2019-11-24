@@ -10,10 +10,10 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.ValueObjects
     public class AddressDetail : ValueObject
     {
         public string Address { get; set; }
-        public int Latitude { get; set; }
-        public int Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
-        public AddressDetail(string address, int lat, int lng)
+        public AddressDetail(string address, double lat, double lng)
         {
             Address = address;
             Latitude = lat;

@@ -12,5 +12,7 @@ namespace SmartLogistic.Domain.TransportRequestAggregate.Intefaces
     {        
         Task<EntityValidationResult<TransportRequest>> AddTransportRequest(TransportRequest data);
         List<TransportRequest> FindTransportRequest(FilterTransportType filterCriteria, string keywords = null);
+        Task JobAssignment();
+        Task RouteOptimisation();
     }
 }

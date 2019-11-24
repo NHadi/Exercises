@@ -46,7 +46,7 @@ namespace SmartLogistic.Domain.TransportRequestAggregate
          => Status = status;
         public void ScheduledDilvery(string time)
             => ScheduledDeliveryTime = time;
-        public void AssignedRoute(Map start, Map end, Direction direction, List<MapDirectionStep> steps)
+        public void AssignedRoute(MapLocation start, MapLocation end, Direction direction, List<MapDirectionStep> steps)
          => RouteDetail = new MapDirection(start, end, direction, steps);
         public void AssignedRoute(MapDirection direction)
          => RouteDetail = direction;

@@ -78,6 +78,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Core\EntVisionLibraries\EntVisionLibraries.Common\EntVisionLibraries.Common.csproj">
+      <Project>{F753E7C8-1248-4700-860B-79C0B614454A}</Project>
+      <Name>EntVisionLibraries.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\EntVisionLibraries\EntVisionLibraries.EntityFramework.Common\EntVisionLibraries.EntityFramework.Common.csproj">
+      <Project>{2f42eac6-d363-4517-abc4-9c00bd58cc51}</Project>
+      <Name>EntVisionLibraries.EntityFramework.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Core\EntVisionLibraries\EntVisionLibraries.MicroOrmDapper.Common\EntVisionLibraries.MicroOrmDapper.Common.csproj">
+      <Project>{407ffd51-055d-4f27-aec3-28b857247029}</Project>
+      <Name>EntVisionLibraries.MicroOrmDapper.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SmartLogistic.Domain\SmartLogistic.Domain.csproj">
       <Project>{5F1325EE-74DF-408D-8860-6F9780CE5F45}</Project>
       <Name>SmartLogistic.Domain</Name>

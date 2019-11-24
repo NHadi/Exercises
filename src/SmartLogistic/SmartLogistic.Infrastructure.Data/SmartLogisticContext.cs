@@ -10,7 +10,7 @@ namespace SmartLogistic.Infrastructure.Data
         {            
         }
         #region Domain Maps
-        public virtual DbSet<Map> Map { get; set; }
+        public virtual DbSet<MapLocation> MapLocation { get; set; }
         public virtual DbSet<MapDirection> MapDirection { get; set; }
         public virtual DbSet<MapDirectionStep> MapDirectionStep { get; set; }
         #endregion

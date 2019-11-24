@@ -9,7 +9,7 @@ namespace SmartLogistic.Domain.MapAggregate.Interfaces
 {
     public interface IMapManagementService
     {
-        TransportRequest GetGeocoding(string address);
-        Map GetGeocoding(string lat, string lng);
+        Geocoding GetGeocoding(string address);
+        Geocoding GetGeocoding(double lat, double lng);
     }
 }

@@ -18,7 +18,7 @@ namespace SmartLogistic.Domain.MapAggregate
 
         }
 
-        public MapDirection(Map start, Map end, Direction direction, List<MapDirectionStep> steps)
+        public MapDirection(MapLocation start, MapLocation end, Direction direction, List<MapDirectionStep> steps)
         {
             Start = start;
             End = end;
@@ -26,8 +26,8 @@ namespace SmartLogistic.Domain.MapAggregate
             Steps = steps;
         }
 
-        public Map Start { get;  set; }
-        public Map End { get;  set; }
+        public MapLocation Start { get;  set; }
+        public MapLocation End { get;  set; }
         public Direction Direction { get;  set; }
         
         public List<MapDirectionStep> Steps { get; set; }

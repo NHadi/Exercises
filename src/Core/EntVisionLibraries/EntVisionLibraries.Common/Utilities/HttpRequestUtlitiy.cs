@@ -48,9 +48,9 @@ namespace EntVisionLibraries.Common.Utilities.Interfaces
                 var ResponseString = ProcessRequest(requestType, url, param, token);
                 var jsonObject = (JObject)JsonConvert.DeserializeObject(ResponseString);
 
-                if (jsonObject["Result"] != null)
+                if (jsonObject["Results"] != null)
                 {
-                    result = JsonConvert.DeserializeObject<T>(jsonObject["Result"].ToString());
+                    result = JsonConvert.DeserializeObject<T>(jsonObject["Results"].ToString());
                 }
                 else
                 {
@@ -75,9 +75,9 @@ namespace EntVisionLibraries.Common.Utilities.Interfaces
 
                 var jsonObject = (JObject)JsonConvert.DeserializeObject(ResponseString);
 
-                if (jsonObject["Result"] != null)
+                if (jsonObject["Results"] != null)
                 {
-                    result = JsonConvert.DeserializeObject<List<T>>(jsonObject["Result"].ToString());
+                    result = JsonConvert.DeserializeObject<List<T>>(jsonObject["Results"].ToString());
                 }
                 else
                 {

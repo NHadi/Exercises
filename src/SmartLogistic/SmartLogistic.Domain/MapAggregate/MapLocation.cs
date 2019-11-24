@@ -8,21 +8,21 @@ using System.Threading.Tasks;
 
 namespace SmartLogistic.Domain.MapAggregate
 {
-    public class Map : Entity<Guid>
+    public class MapLocation : Entity<Guid>
     {
-        public Map()
+        public MapLocation()
         {
 
         }
 
-        public Map(string title, string content, string lat, string lng)
+        public MapLocation(string address, string content, string lat, string lng)
         {
-            Title = title;
+            Address = address;
             Content = content;
             Latitude = lat;
             Longitude = lng;
         }
-        public string Title { get; set; }
+        public string Address { get; set; }
         public string Content { get; set; }
         public string Latitude { get; set; }
         public string Longitude { get; set; }

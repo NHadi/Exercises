@@ -12,15 +12,28 @@ namespace SmartLogistic.Domain.MapAggregate.Services
 {
     public class MapManagementService : IMapManagementService
     {        
-        public TransportRequest GetGeocoding(string address)
+        public Geocoding GetGeocoding(string address)
         {
-            var geocodingResponse = new HttpRequestUtlitiy<TransportRequest>().Request(HttpRequestType.GET, $"http://localhost:59810/api/TransportManagement/TrackJob?code=T01");
-            return geocodingResponse;
+            //var geocodingResponse = new HttpRequestUtlitiy<Geocoding>()
+            //    .Request(HttpRequestType.GET, $"https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=YOUR_API_KEY");
+
+
+            var geometry = new Geometry(new Location(37.4267861, -122.0806032));
+            var result = new Geocoding(geometry);
+            
+
+            return result;
         }
 
-        public Map GetGeocoding(string lat, string lng)
+        public Geocoding GetGeocoding(double lat, double lng)
         {
-            return new Map();
+            //var geocodingResponse = new HttpRequestUtlitiy<Geocoding>()
+            //    .Request(HttpRequestType.GET, $"https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY");
+
+            var geometry = new Geometry(new Location(37.4267861, -122.0806032));
+            var result = new Geocoding(geometry);
+
+            return result;
         }
     }
 }

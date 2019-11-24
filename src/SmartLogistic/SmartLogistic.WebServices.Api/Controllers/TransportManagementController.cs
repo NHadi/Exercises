@@ -1,4 +1,5 @@
 ﻿using EntVisionLibraries.Common.API;
+using SmartLogistic.Domain.MapAggregate.Interfaces;
 using SmartLogistic.Domain.TransportRequestAggregate;
 using SmartLogistic.Domain.TransportRequestAggregate.Enums;
 using SmartLogistic.Domain.TransportRequestAggregate.Intefaces;
@@ -18,9 +19,12 @@ namespace SmartLogistic.WebServices.Api.Controllers
     public class TransportManagementController : ApiController
     {
         private readonly ITransportManagementService _transportManagementService;
-        public TransportManagementController(ITransportManagementService transportManagementService)
+        private readonly IMapManagementService _mapManagementService;
+        public TransportManagementController(ITransportManagementService transportManagementService,
+            IMapManagementService mapManagementService)
         {
             _transportManagementService = transportManagementService;
+            _mapManagementService = mapManagementService;
         }
 
         [HttpGet]
@@ -41,8 +45,38 @@ namespace SmartLogistic.WebServices.Api.Controllers
 
         }
 
+        [HttpGet]
+        [Route("JobAssignment")]
+        public async Task<IHttpActionResult> JobAssignment()
+        {
+            try
+            {
+                await _transportManagementService.JobAssignment();
+                return Ok(new ApiResponse(200));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        [HttpGet]
+        [Route("RouteOptimisation")]
+        public async Task<IHttpActionResult> RouteOptimisation()
+        {
+            try
+            {
+                await _transportManagementService.RouteOptimisation();
+                return Ok(new ApiResponse(200));
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         [HttpPost]
-        [Route("AsignJob")]
+        [Route("AssignJob")]
         public async Task<IHttpActionResult> AssignJob([FromBody] AsssignJobRequest request)
         {
             try
@@ -69,7 +103,6 @@ namespace SmartLogistic.WebServices.Api.Controllers
                 //Log here
                 return BadRequest();
             }
-
         }
 
 

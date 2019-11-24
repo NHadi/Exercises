@@ -190,12 +190,21 @@
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\TransportManagementController.cs" />
+    <Compile Include="Controllers\MapsController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="DTO\AsssignJobRequest.cs" />
     <Compile Include="DTO\AsssignJobResponse.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\GoogleMapsDto\AddressComponent.cs" />
+    <Compile Include="Models\GoogleMapsDto\Geocoding.cs" />
+    <Compile Include="Models\GoogleMapsDto\Geometry.cs" />
+    <Compile Include="Models\GoogleMapsDto\Location.cs" />
+    <Compile Include="Models\GoogleMapsDto\NorthEast.cs" />
+    <Compile Include="Models\GoogleMapsDto\PlusCode.cs" />
+    <Compile Include="Models\GoogleMapsDto\SoutWest.cs" />
+    <Compile Include="Models\GoogleMapsDto\Viewport.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -251,7 +260,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

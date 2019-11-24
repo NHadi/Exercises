@@ -51,15 +51,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MapAggregate\AddressComponent.cs" />
     <Compile Include="MapAggregate\Enums\DirectionType.cs" />
     <Compile Include="MapAggregate\Extensions\FilterMapDirectionExtension.cs" />
+    <Compile Include="MapAggregate\Geocoding.cs" />
+    <Compile Include="MapAggregate\Geometry.cs" />
     <Compile Include="MapAggregate\Interfaces\IMapManagementService.cs" />
     <Compile Include="MapAggregate\Interfaces\IMapRepository.cs" />
-    <Compile Include="MapAggregate\Map.cs" />
+    <Compile Include="MapAggregate\Location.cs" />
+    <Compile Include="MapAggregate\MapLocation.cs" />
     <Compile Include="MapAggregate\MapDirection.cs" />
     <Compile Include="MapAggregate\MapDirectionStep.cs" />
+    <Compile Include="MapAggregate\PlusCode.cs" />
     <Compile Include="MapAggregate\Services\MapManagementService.cs" />
     <Compile Include="MapAggregate\ValueObjects\DirectionDetail.cs" />
+    <Compile Include="MapAggregate\Viewport.cs" />
     <Compile Include="TransportRequestAggregate\DeliveryTime.cs" />
     <Compile Include="TransportRequestAggregate\Enums\DeliveryTimeType.cs" />
     <Compile Include="TransportRequestAggregate\Enums\FilterTransportType.cs" />
